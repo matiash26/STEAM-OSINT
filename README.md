@@ -1,22 +1,36 @@
-![steam-osint](https://raw.githubusercontent.com/matiash26/Steam-OSINT-TOOL/main/img/banner.png)
+![steam-osint](./img/banner.png)
 
-# About
-This tool will help to show who are her closest friends who possibly will also be outside of steam
-- get your steam token from the link below and click on the button "Go to Registration page"
-- [steam Token](https://steamcommunity.com/dev)
-- [copy steamID64](https://steamcommunity.com/dev)
+# Steam OSINT Tool 🔍
 
-# Steam-OSINT-TOOL
-## 1. installing on linux:
- ```
- $ git clone https://github.com/matiash26/Steam-OSINT-TOOL.git
- $ pip install -r requirements.txt
- $ cd /Steam-OSINT-TOOL-main/
- ```
- 
- 
-## 2.run the program
- ```
- $ python main.py
- ```
+Discover **mutual friends on Steam** and explore potential connections **outside the Steam platform**.  
+Designed for OSINT enthusiasts, researchers, and personal analytics.
 
+---
+
+## 🚀 Features
+
+- Analyze mutual friends on Steam.
+- Identify connections that may extend outside Steam.
+- Easy installation and usage on **Linux**.
+- Command-line interface (CLI) for fast operation.
+
+---
+
+## 💻 Installation (Linux)
+
+Follow these steps to install the tool:
+
+## Clone the repository
+
+```bash
+
+git clone https://github.com/matiash26/Steam-OSINT-TOOL.git
+cd Steam-OSINT-TOOL/
+python -m pip install .
+```
+
+## How to run
+
+```
+steamosint
+```
