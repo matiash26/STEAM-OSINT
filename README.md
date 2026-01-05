@@ -1,8 +1,8 @@
 ![steam-osint](./img/banner.png)
 
-# Steam OSINT Tool 🔍
+# Steam OSINT 🔍
 
-Discover **mutual friends on Steam** and explore potential connections **outside the Steam platform**.  
+Steam osint discover **mutual friends** and explore potential connections **outside the Steam platform**.  
 Designed for OSINT enthusiasts, researchers, and personal analytics.
 
 ---
@@ -11,12 +11,12 @@ Designed for OSINT enthusiasts, researchers, and personal analytics.
 
 - Analyze mutual friends on Steam.
 - Identify connections that may extend outside Steam.
-- Easy installation and usage on **Linux**.
+- Easy installation and usage on **Windows** and **Linux** .
 - Command-line interface (CLI) for fast operation.
 
 ---
 
-## 💻 Installation (Linux)
+## 💻 Installation (Linux / Windows)
 
 Follow these steps to install the tool:
 

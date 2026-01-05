@@ -13,7 +13,6 @@ class Osint:
         self._total = 0
         self._token = None
         self._steamID = ""
-        self._target = {}
         self._targetFriends = []
         self._mutualFriend = []
         self._mutualDetails = []
@@ -29,11 +28,11 @@ class Osint:
         hasFriend = self.get_friends(user)
         if hasFriend:
             self._targetFriends = hasFriend
-            print(f"{CN}[*] Starting friend enumeration...")
-            self.run_threads(self._targetFriends,self.friendsByFriends)
+            self.run_threads(self._targetFriends,self.friendsOfFriend)
             mutualFriends = self.creatingAccuracy()
+            print(f"{CN}[*] Starting friend enumeration...")
             self.run_threads(mutualFriends,self.detailFromUser)
-            self.orderByAcurracy()
+            self._mutualDetails = sorted(self._mutualDetails, key=lambda friend: friend["accuracy"], reverse=True)
     def verifySteamID (self, user):
         if user.isdigit():
             return user
@@ -48,7 +47,7 @@ class Osint:
         if friends:
             return friends["friendslist"]["friends"]
         print(f"    {BR}[{RD}!{RS}]{RD} {RD}A friends list needs to be public.{RS}")
-    def friendsByFriends(self, steamURL):
+    def friendsOfFriend(self, steamURL):
         try:
             requestThreads = requests.get(f"{self._friendUrl}{self._token}&steamid={steamURL["steamid"]}")
             friends = json.loads(requestThreads.content)
@@ -80,12 +79,8 @@ class Osint:
                 "steamid":f"{Tfriend.get("steamid")}", "accuracy": accuracy, "since": since})
                 if(accuracy > self._total):
                     self._total = accuracy
-        filteredList = [
-            friend
-            for friend in mutual
-            if 50 <= (acc := self.percentage(friend)) <= 100
-            ]
-        return filteredList
+        sortedFriend = sorted(mutual, key=lambda friend: friend["accuracy"], reverse=True)[:15]
+        return sortedFriend
     def detailFromUser(self, user):
         try:
             detail = requests.get(f"{self._profileURL}{self._token}&steamids={user["steamid"]}")
@@ -111,9 +106,6 @@ class Osint:
         return user.get(key) if user.get(key) else f'{RD}x{RS}'
     def line(self, user,key):
         return f"{BR}[{GR}+{BR}]{RS}" if user.get(key) else f"{BR}[{RD}-{BR}]{RS}"
-    def orderByAcurracy(self):
-            sortedFriend = sorted(self._mutualDetails, key=lambda friend: friend["accuracy"], reverse=True)
-            self._mutualDetails = sortedFriend
     def setToken(self, token):
         print(self._path)
         with open(self._path,"w") as tokenFile:
