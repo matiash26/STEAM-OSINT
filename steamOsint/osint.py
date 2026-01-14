@@ -107,9 +107,7 @@ class Osint:
     def line(self, user,key):
         return f"{BR}[{GR}+{BR}]{RS}" if user.get(key) else f"{BR}[{RD}-{BR}]{RS}"
     def setToken(self, token):
-        print(self._path)
         with open(self._path,"w") as tokenFile:
-            print(token,"chegou aqui")
             tokenFile.write(token)
             self._token = token
     def getToken(self):

@@ -1,36 +1,57 @@
-![steam-osint](./img/banner.png)
+![Steam OSINT Banner](./img/banner.png)
 
-# Steam OSINT 🔍
+# Steam OSINT 🔍  
+### Open Source Intelligence Tool for Steam
 
-Steam osint discover **mutual friends** and explore potential connections **outside the Steam platform**.  
-Designed for OSINT enthusiasts, researchers, and personal analytics.
+**Steam OSINT** is an **open source intelligence (OSINT) tool for Steam** designed to analyze **mutual friends**, map relationship patterns, and identify **potential connections outside the Steam platform**.
+
+This project is built for **OSINT researchers**, cybersecurity enthusiasts, investigators, and anyone interested in **Steam profile analysis**.
+
+---
+
+## 🔎 What is Steam OSINT?
+
+Steam OSINT focuses on **Steam OSINT investigations** by analyzing **public Steam profile data** to:
+
+- Discover **mutual friends** between Steam users  
+- Identify hidden or indirect relationships  
+- Support **open source intelligence (OSINT)** investigations  
+- Use Steam as a **social graph data source**
+
+By correlating public Steam information, this tool helps uncover **connections that may exist beyond Steam**.
 
 ---
 
 ## 🚀 Features
 
-- Analyze mutual friends on Steam.
-- Identify connections that may extend outside Steam.
-- Easy installation and usage on **Windows** and **Linux** .
-- Command-line interface (CLI) for fast operation.
+- Mutual friends analysis on Steam  
+- Steam OSINT profile investigation  
+- Identification of external social connections  
+- Cross-platform support (**Windows & Linux**)  
+- Simple and fast **Command-Line Interface (CLI)**
+
+---
+
+## 🧠 Use Cases
+
+- Open Source Intelligence (OSINT) investigations  
+- Steam social graph and network analysis  
+- Digital footprint research  
+- Personal analytics and data exploration  
+- Cybersecurity and research projects
 
 ---
 
 ## 💻 Installation (Linux / Windows)
 
-Follow these steps to install the tool:
+Clone the repository and install the tool:
 
-## Clone the repository
-
-```bash
-
+```
 git clone https://github.com/matiash26/Steam-OSINT-TOOL.git
 cd Steam-OSINT-TOOL/
 python -m pip install .
 ```
-
-## How to run
-
-```
+## ➡️ How to run
+```m
 steamosint
 ```
